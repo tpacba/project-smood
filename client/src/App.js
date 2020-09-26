@@ -52,7 +52,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <a
-          href="http://localhost:8888"
+          href="http://localhost:8888/login"
           target="_blank"
         >
           Login to Spotify
