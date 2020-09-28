@@ -1,6 +1,11 @@
 import React from 'react';
 import './App.css';
 import SpotifyWebApi from 'spotify-web-api-js';
+import Nav from 'react-bootstrap/Nav';
+import Search from './pages/Search';
+import Searchmood from './pages/Searchmood';
+import Petmusic from './pages/Petmusic';
+import Account from './pages/Account';
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -80,32 +85,56 @@ class App extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div className="App">
-        <a
-          href="http://localhost:8888/login"
-        >
-          Login to Spotify
-          </a>
-        <div>
-          Now Playing: {this.state.nowPlaying.name}
+      <div>
+          <div>
+          <Nav
+            activeKey="/home"
+            onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
+            <Nav.Item>
+              <Nav.Link href="/home">Home</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="/Search" component={Search}>Search</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="/Searchmood" component={Searchmood}>Search Mood</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="/Petmusic" component={Petmusic}>Pet Music</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="/Account" component={Account}>Account</Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+          </div>
+        <div className="App">
+          <a
+            href="http://localhost:8888/login"
+          >
+            Login to Spotify
+            </a>
+          <div>
+            Now Playing: {this.state.nowPlaying.name}
+          </div>
+          <div>
+            <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }} />
+          </div>
+          { this.state.loggedIn &&
+            <button onClick={() => this.getNowPlaying()}>
+              Check Now Playing
+          </button>
+          }
+          <button onClick={() => this.pausePlayback()}>
+              Pause
+          </button>
+          <button onClick={() => this.playPlayback()}>
+              Play
+          </button>
+          <button onClick={() => this.startOrResumePlayback()}>
+              Play Carly Rae Jepsen
+          </button>
         </div>
-        <div>
-          <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }} />
-        </div>
-        { this.state.loggedIn &&
-          <button onClick={() => this.getNowPlaying()}>
-            Check Now Playing
-        </button>
-        }
-        <button onClick={() => this.pausePlayback()}>
-            Pause
-        </button>
-        <button onClick={() => this.playPlayback()}>
-            Play
-        </button>
-        <button onClick={() => this.startOrResumePlayback()}>
-            Play Carly Rae Jepsen
-        </button>
       </div>
     );
   }
