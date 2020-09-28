@@ -22,6 +22,10 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.getNowPlaying()
+  }
+
   getHashParams() {
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -36,15 +40,41 @@ class App extends React.Component {
 
   getNowPlaying() {
     spotifyApi.getMyCurrentPlaybackState()
-      .then((response) => {
-        console.log(response);
+      .then((res) => {
+        console.log(res);
         this.setState({
           nowPlaying: {
-            name: response.item.name,
-            albumArt: response.item.album.images[0].url
+            name: res.item.name,
+            albumArt: res.item.album.images[0].url
           }
         });
       })
+      .catch(err => console.log(err))
+  }
+
+  playPlayback() {
+    spotifyApi.play()
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+  pausePlayback() {
+    spotifyApi.pause()
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+
+  startOrResumePlayback() {
+    var song = {
+      "context_uri": "spotify:album:5ht7ItJgpBH7W6vJ5BqpPr",
+      "offset": {
+        "position": 5
+      },
+      "position_ms": 0
+    };
+    console.log(spotifyApi.play(song))
+    spotifyApi.play(song)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
   }
 
   render() {
@@ -53,7 +83,6 @@ class App extends React.Component {
       <div className="App">
         <a
           href="http://localhost:8888/login"
-          target="_blank"
         >
           Login to Spotify
           </a>
@@ -68,6 +97,15 @@ class App extends React.Component {
             Check Now Playing
         </button>
         }
+        <button onClick={() => this.pausePlayback()}>
+            Pause
+        </button>
+        <button onClick={() => this.playPlayback()}>
+            Play
+        </button>
+        <button onClick={() => this.startOrResumePlayback()}>
+            Play Carly Rae Jepsen
+        </button>
       </div>
     );
   }
