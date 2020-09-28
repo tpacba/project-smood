@@ -6,12 +6,11 @@ const spotifyApi = new SpotifyWebApi();
 class Home extends React.Component {
   constructor() {
     super();
-    const params = this.getHashParams();
-    console.log(params);
 
-    const token = params.access_token;
+    const token = sessionStorage.getItem("token");
 
     if (token) {
+      console.log(token)
       spotifyApi.setAccessToken(token);
     }
 
@@ -23,18 +22,6 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.getNowPlaying()
-  }
-
-  getHashParams() {
-    var hashParams = {};
-    var e, r = /([^&;=]+)=?([^&;]*)/g,
-      q = window.location.hash.substring(1);
-    e = r.exec(q)
-    while (e) {
-      hashParams[e[1]] = decodeURIComponent(e[2]);
-      e = r.exec(q);
-    }
-    return hashParams;
   }
 
   getNowPlaying() {
@@ -72,17 +59,17 @@ class Home extends React.Component {
     };
     console.log(spotifyApi.play(song))
     spotifyApi.play(song)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
   }
 
   render() {
     console.log(this.state)
     return (
       <div>
-          <div>
+        <div>
 
-          </div>
+        </div>
         <div className="App">
           <a
             href="http://localhost:8888/login"
@@ -95,20 +82,14 @@ class Home extends React.Component {
           <div>
             <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }} />
           </div>
-          { this.state.loggedIn &&
-            <button onClick={() => this.getNowPlaying()}>
-              Check Now Playing
-          </button>
+          {this.state.loggedIn &&
+            <div>
+              <button onClick={() => this.getNowPlaying()}>Check Now Playing</button>
+              <button onClick={() => this.pausePlayback()}>Pause</button>
+              <button onClick={() => this.playPlayback()}>Play</button>
+              <button onClick={() => this.startOrResumePlayback()}>Play Carly Rae Jepsen</button>
+            </div>
           }
-          <button onClick={() => this.pausePlayback()}>
-              Pause
-          </button>
-          <button onClick={() => this.playPlayback()}>
-              Play
-          </button>
-          <button onClick={() => this.startOrResumePlayback()}>
-              Play Carly Rae Jepsen
-          </button>
         </div>
       </div>
     );
