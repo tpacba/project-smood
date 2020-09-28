@@ -16,5 +16,5 @@ app.use(routes);
 
 // Start the server
 app.listen(PORT, function() {
-  console.log(`🌎  ==> Server now listening on https://localhost:${PORT}`);
+  console.log(`🌎  ==> Server now listening on ${PORT}`);
 });

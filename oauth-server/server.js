@@ -1,11 +1,12 @@
+require('dotenv').config()
 let express = require('express')
 let request = require('request')
 let querystring = require('querystring')
 
 let app = express()
 
-let SPOTIFY_CLIENT_ID = "8c0cbc509fd94dab9d857c984575d67b";
-let SPOTIFY_CLIENT_SECRET = "919d264b6c8b4b01b34d3070f6ddf6c1";
+let SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+let SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 
 let redirect_uri =
   process.env.REDIRECT_URI ||
@@ -50,5 +51,5 @@ app.get('/callback', function (req, res) {
 
 let port = process.env.PORT || 8888
 app.listen(port, function() {
-  console.log(`Listening on https://localhost:${port}/login to initiate authentication flow.`)
+  console.log(`Listening on ${port}. Go to /login to initiate authentication flow.`)
 })
