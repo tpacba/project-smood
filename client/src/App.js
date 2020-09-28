@@ -1,11 +1,7 @@
 import React from 'react';
 import './App.css';
 import SpotifyWebApi from 'spotify-web-api-js';
-import Nav from 'react-bootstrap/Nav';
-import Search from './pages/Search';
-import Searchmood from './pages/Searchmood';
-import Petmusic from './pages/Petmusic';
-import Account from './pages/Account';
+
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -85,29 +81,8 @@ class App extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div>
-          <div>
-          <Nav
-            activeKey="/home"
-            onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
-            <Nav.Item>
-              <Nav.Link href="/home">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="/Search" component={Search}>Search</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="/Searchmood" component={Searchmood}>Search Mood</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="/Petmusic" component={Petmusic}>Pet Music</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="/Account" component={Account}>Account</Nav.Link>
-            </Nav.Item>
-          </Nav>
+        <div>
 
-          </div>
         <div className="App">
           <a
             href="http://localhost:8888/login"
