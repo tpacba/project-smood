@@ -1,11 +1,13 @@
 let express = require('express')
 let request = require('request')
 let querystring = require('querystring')
+require('dotenv').config()
+
 
 let app = express()
 
-let SPOTIFY_CLIENT_ID = "8c0cbc509fd94dab9d857c984575d67b";
-let SPOTIFY_CLIENT_SECRET = "919d264b6c8b4b01b34d3070f6ddf6c1";
+let SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+let SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 
 let redirect_uri =
   process.env.REDIRECT_URI ||
