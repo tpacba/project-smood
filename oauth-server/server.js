@@ -1,8 +1,7 @@
+require('dotenv').config()
 let express = require('express')
 let request = require('request')
 let querystring = require('querystring')
-require('dotenv').config()
-
 
 let app = express()
 
@@ -52,5 +51,5 @@ app.get('/callback', function (req, res) {
 
 let port = process.env.PORT || 8888
 app.listen(port, function() {
-  console.log(`Listening on https://localhost:${port}/login to initiate authentication flow.`)
+  console.log(`Listening on ${port}. Go to /login to initiate authentication flow.`)
 })
