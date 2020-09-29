@@ -1,6 +1,6 @@
 # Dependency directories
 node_modules/
-jspm_packages/
+jspm_packages
 
 # Logs
 logs
@@ -40,6 +40,8 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
+
+
 
 # TypeScript v1 declaration files
 typings/
