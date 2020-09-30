@@ -4,24 +4,13 @@
   "private": true,
   "proxy": "http://localhost:8888/",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "@material-ui/core": "^4.11.0",
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "spotify-web-api-js": "^1.5.0",
-    "bootstrap": "4.5.2",
-    "dot-env": "0.0.1",
-    "lodash": "4.17.19",
-    "prop-types": "15.7.2",
-    "react-redux": "7.2.1",
-    "react-bootstrap": "1.3.0",
-    "redux": "4.0.5",
-    "redux-thunk": "2.3.0"
+    "spotify-web-api-js": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
