@@ -13,13 +13,11 @@ class App extends React.Component {
   constructor() {
     super();
     const params = this.getHashParams();
-    console.log(params);
 
     if (params.access_token) {
       sessionStorage.setItem("token", params.access_token)
     }
   }
-
   getHashParams() {
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -31,7 +29,6 @@ class App extends React.Component {
     }
     return hashParams;
   }
-
   render() {
     return (
       <Router>
