@@ -43,28 +43,28 @@ function valuetext(value) {
   return `${value}Mood`;
 }
 
-function Slidershort() {
+function Slidershort(props) {
   const classes = useStyles();
+
   return (
     <div>
-    <div className={classes.root}>
-      <Typography 
-      id="discrete-slider-custom"
-      style={{textAlign:'center'}} gutterBottom>
-        Choose your Mood
+      <div className={classes.root}>
+        <Typography
+          id="discrete-slider-custom"
+          style={{ textAlign: 'center' }} gutterBottom>
+          Choose your Mood
       </Typography>
-      <Slider
-        defaultValue={20}
-        getAriaValueText={valuetext}
-        aria-labelledby="discrete-slider-custom"
-        step={20}
-        valueLabelDisplay="off"
-        marks={marks}
-        style={{position: 'relative'}}
-      />
-    </div>
-      
-
+        <Slider
+          value={props.value}
+          getAriaValueText={valuetext}
+          aria-labelledby="discrete-slider-custom"
+          step={20}
+          valueLabelDisplay="off"
+          marks={marks}
+          style={{ position: 'relative' }}
+          onChangeCommitted={props.handleChange}
+        />
+      </div>
     </div>
   );
 }

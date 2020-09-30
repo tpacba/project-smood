@@ -24,7 +24,7 @@ router.route('/login')
             querystring.stringify({
                 response_type: 'code',
                 client_id: SPOTIFY_CLIENT_ID,
-                scope: 'user-read-private user-read-email user-read-playback-state user-modify-playback-state',
+                scope: 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-private',
                 redirect_uri
             }))
     })
