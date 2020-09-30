@@ -1,5 +1,6 @@
 import React from "react";
 import SpotifyWebApi from 'spotify-web-api-js';
+import Landanim from '../components/Landanim';
 
 const spotifyApi = new SpotifyWebApi();
 
