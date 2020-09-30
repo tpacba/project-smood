@@ -32,7 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div style={{flex:'1', flexDirection: 'row', alignItems: 'center' }}>
           <Navbar />
           <Wrapper>
             <Route exact path="/" component={Home} />

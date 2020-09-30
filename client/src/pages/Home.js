@@ -3,7 +3,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import MusicPlayer from '../components/MusicPlayer/MusicPlayer'
-
+import Landanim from '../components/Landanim';
 
 const spotifyApi = new SpotifyWebApi();
 
