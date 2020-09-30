@@ -1,31 +1,31 @@
-import React from "react";
-import { Nav } from 'react-bootstrap';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
+const useStyles = makeStyles({
+    root: {
+        flexGrow: 1,
+    },
+});
 
-function Navbar() {
+export default function () {
+    const classes = useStyles();
 
     return (
-        <Nav
-            activeKey="/"
-        // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-        >
-            <Nav.Item>
-                <Nav.Link href="/">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/search">Search</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/search/mood">Search Mood</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/petmusic">Pet Music</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/account">Account</Nav.Link>
-            </Nav.Item>
-        </Nav>
-    )
+        <Paper className={classes.root}>
+            <Tabs
+                indicatorColor="primary"
+                textColor="primary"
+                centered
+            >
+                <Tab label="Home" href={"/"} />
+                <Tab label="Search" href={"/search"} />
+                <Tab label="Search Mood" href={"/search/mood"} />
+                <Tab label="Pet Music" href={"/petmusic"} />
+                <Tab label="Account" href={"/account"} />
+            </Tabs>
+        </Paper>
+    );
 }
-
-export default Navbar;
