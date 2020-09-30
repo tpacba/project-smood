@@ -17,12 +17,13 @@ export default function () {
     return (
         <div>
         <Paper className={classes.root}>
+        <Landanimsmall></Landanimsmall>
             <Tabs
+                aligncontent="center"
                 indicatorColor="primary"
                 textColor="primary"
                 centered
             >
-                <Landanimsmall></Landanimsmall>
                 <Tab label="Home" href={"/"} />
                 <Tab label="Search" href={"/search"} />
                 <Tab label="Search Mood" href={"/search/mood"} />
