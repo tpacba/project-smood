@@ -1,5 +1,9 @@
 import React from "react";
-
+import { Provider } from "react-redux";
+import store from "../store/store";
+import AppRouter from "../routers/AppRouter";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../src/styles.css";
 
 function Search() {
 
@@ -16,10 +20,19 @@ function Search() {
   //     .play(song)
   //     .catch((err) => console.log(err));
   // }
-  return (
-    <div>
 
-    </div>
+  
+  return (
+    // (
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
+    // ),
+    // (
+    //   <div>
+    //     <div id="loader" class="hide"></div>
+    //   </div>
+    // )
   );
 }
 
