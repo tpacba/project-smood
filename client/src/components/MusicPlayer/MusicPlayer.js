@@ -21,7 +21,8 @@ class App extends React.Component {
 
     this.state = {
       loggedIn: token ? true : false,
-      nowPlaying: { song: 'Not Checked', artist: 'Not Checked', albumArt: '' }
+      is_playing: false,
+      nowPlaying: { song: 'Not Checked', artist: 'Not Checked', albumArt: ''}
     }
   }
 
@@ -34,6 +35,7 @@ class App extends React.Component {
       .then((res) => {
         console.log(res);
         this.setState({
+          is_playing: res.is_playing,
           nowPlaying: {
             song: res.item.name,
             artist: res.item.artists[0].name,
@@ -44,32 +46,36 @@ class App extends React.Component {
       .catch(err => console.log(err))
   }
 
-  playPlayback(event) {
-    event.prevent.default();
-    console.log("play")
+  playPlayback() {
     spotifyApi.play()
-      .then(res => console.log(res))
+      .then(() => this.setState({is_playing: true}))
       .catch(err => console.log(err))
   }
   pausePlayback() {
     spotifyApi.pause()
-      .then(res => console.log(res))
+      .then(() => this.setState({is_playing: false}))
       .catch(err => console.log(err))
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <div class="container">
           <div class="box"></div>
           {/*pic of artist  */}
           <img src={this.state.nowPlaying.albumArt} id="thumbnail" />
-
           <div class="song-artist">{this.state.nowPlaying.artist}</div>
           <div class="song-title">{this.state.nowPlaying.song}</div>
 
           {/* play button */}
-          <img src={play} onclick={(event) => this.playPlayback(event)} id="play-pause" />
+          <img src={play} onClick={() => {
+            if(this.state.is_playing) {
+              this.pausePlayback();
+            } else {
+              this.playPlayback();
+            }
+          }} id="play-pause" />
 
           {/* next button */}
           {/* <img src={forward} onclick="nextSong()" id="next-song" /> */}
