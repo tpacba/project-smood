@@ -1,26 +1,47 @@
 import React from "react";
+import SpotifyWebApi from "spotify-web-api-js";
+import SearchForm from "../components/SearchForm";
+import SearchResults from "../components/SearchResults"
 
+const spotifyApi = new SpotifyWebApi();
 
-function Search() {
+class Search extends React.Component {
+  state = {
+    search: "",
+    results: [],
+    error: "",
+  };
 
-  // startOrResumePlayback() {
-  //   var song = {
-  //     context_uri: "spotify:album:5ht7ItJgpBH7W6vJ5BqpPr",
-  //     offset: {
-  //       position: 5,
-  //     },
-  //     position_ms: 0,
-  //   };
-  //   console.log(spotifyApi.play(song));
-  //   spotifyApi
-  //     .play(song)
-  //     .catch((err) => console.log(err));
-  // }
-  return (
-    <div>
+  componentDidMount() {
+    const token = sessionStorage.getItem("token");
+    spotifyApi.setAccessToken(token);
+    // console.log(this.state)
+  }
 
-    </div>
-  );
+  handleInputChange = (event) => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+     spotifyApi.search(this.state.search, ["track", "artist"])
+       .then((res) => { console.log(res) 
+       this.setState({ results: res.artists.items});
+      })
+      .catch(err => this.setState({ error: err.message }));
+  };
+
+  render() {
+    console.log(this.state)
+    return (
+      <div>
+        <SearchForm
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+        />
+        <SearchResults results={this.state.results} />
+      </div>
+    );
+  }
 }
-
 export default Search;
