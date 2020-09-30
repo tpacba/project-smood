@@ -2,6 +2,7 @@ import React from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import MusicPlayer from '../components/MusicPlayer/MusicPlayer'
 
 
 const spotifyApi = new SpotifyWebApi();
@@ -31,6 +32,7 @@ class Home extends React.Component {
     spotifyApi
       .getMyCurrentPlaybackState()
       .then((res) => {
+        console.log(res)
         this.setState({
           nowPlaying: {
             name: res.item.name,
@@ -44,13 +46,11 @@ class Home extends React.Component {
   playPlayback() {
     spotifyApi
       .play()
-      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
   pausePlayback() {
     spotifyApi
       .pause()
-      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
 
@@ -65,13 +65,10 @@ class Home extends React.Component {
     console.log(spotifyApi.play(song));
     spotifyApi
       .play(song)
-      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
 
   render() {
-    console.log(this.state);
-
     return (
       <div>
         <div></div>
@@ -87,6 +84,7 @@ class Home extends React.Component {
           }
           {this.state.loggedIn && (
             <div>
+              <MusicPlayer />
               <div>Now Playing: {this.state.nowPlaying.name}</div>
               <div>
                 <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }} />
