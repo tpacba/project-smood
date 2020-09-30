@@ -6,3 +6,37 @@ div, button {
   min-height: 100%;
   padding-bottom: 100px;
 }
+
+#Record{
+  animation: recorder 1s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes recorder{
+  from{
+    transform: rotateZ(0deg);
+  }
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+
+
+#HeadPhones{
+  animation: hphones 1s infinite linear alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes hphones{
+  from{
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+
+  }
+  to{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+  }
+}
