@@ -4,16 +4,7 @@ import SpotifyWebApi from 'spotify-web-api-js';
 
 const spotifyApi = new SpotifyWebApi();
 
-function valueToMood(value) {
-  switch (value) {
-    case 0: return "upbeat";
-    case 20: return "down";
-    case 40: return "angry";
-    case 60: return "energetic";
-    case 80: return "peaceful";
-    case 100: return "chill"
-  }
-}
+
 
 class Searchmood extends React.Component {
   state = {
@@ -31,12 +22,12 @@ class Searchmood extends React.Component {
     this.setState(
       {
         value: newValue,
-        mood: valueToMood(newValue)
+        mood: this.valueToMood(newValue)
       })
     this.searchPlaylist(this.state.mood)
   }
 
-  searchPlaylist(search) {
+  searchPlaylist = (search) => {
     spotifyApi.search(
       search,
       ["playlist"]
@@ -46,7 +37,7 @@ class Searchmood extends React.Component {
     })
   }
 
-  playPlaylist(uri) {
+  playPlaylist = (uri) => {
     spotifyApi.play(
       {
         "context_uri": uri,
@@ -56,6 +47,18 @@ class Searchmood extends React.Component {
         "position_ms": 0
       }
     )
+  }
+
+  valueToMood = (value) => {
+    switch (value) {
+      case 0: return "upbeat";
+      case 20: return "down";
+      case 40: return "angry";
+      case 60: return "energetic";
+      case 80: return "peaceful";
+      case 100: return "chill";
+      default: return "happy"
+    }
   }
 
   render() {
