@@ -2,11 +2,11 @@
   background: #fff;
   border-radius: 2px;
   height: 325px;
-  margin: 1rem;
+  /* margin: 1rem; */
   position: relative;
   width: 325px;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-  text-align: left;
+  text-align: center;
 }
 
 .card > .img-container {
@@ -20,9 +20,12 @@
 }
 
 .card > .content {
+  display: flex; 
+  flex-flow: wrap; 
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 15px;
+  justify-content: space-between;
 }
 
 .card > .content > ul {
@@ -30,18 +33,50 @@
 }
 
 .card > .content > ul > li {
-  margin-top: 18px;
+  margin-top: 5px;
 }
 
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
+/* .row {
+  margin: 0 -5px;
 }
 
-.card > .remove:hover {
-  color: #d50000;
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+} */
+
+/* @media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}  */
+
+button1 {
+display: inline-block;
+padding:0.35em 1.2em;
+border:0.1em solid #FFFFFF;
+margin:0 0.3em 0.3em 0;
+border-radius:0.12em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:300;
+color:#FFFFFF;
+text-align:center;
+transition: all 0.2s;
+}
+
+.button1:hover{
+color:#000000;
+background-color:#FFFFFF;
+}
+
+@media all and (max-width:30em){
+ .button1{
+display:block;
+margin:0.4em auto;
+}
 }
