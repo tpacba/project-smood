@@ -44,3 +44,12 @@ div, button {
 .Player {
   position: relative 500px;
 }
+
+.Iconbuttons {
+  transition-duration: 0.4s;
+}
+
+.Iconbuttons:hover {
+  text-shadow: black; opacity: 50%;
+  border-radius: 100px
+}

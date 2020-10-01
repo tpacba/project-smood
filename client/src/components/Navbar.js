@@ -4,10 +4,10 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Landanimsmall from '../components/Landanimsmall';
-import HouseIcon from '@material-ui/icons/House';
 import SearchIcon from '@material-ui/icons/Search';
 import Mood from '@material-ui/icons/SentimentSatisfiedAlt';
 import Account from '@material-ui/icons/AccountBox';
+import '../App.css';
 
 const useStyles = makeStyles({
     root: {
@@ -29,20 +29,16 @@ export default function () {
                 textColor="primary"
                 centered
             >
-                <a href={"/"}><HouseIcon 
-                    style={{ fontSize: 25, marginRight:'40px', color:'grey'}} 
-                    label="Home" 
-                    /></a>
-                <a href={"/search"}><SearchIcon 
-                    style={{ fontSize: 25, marginRight:'40px', color:'grey'}} 
+                <a className="Iconbuttons" href={"/search"}><SearchIcon 
+                    style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Search" 
                     /></a>
-                <a href={"/search/mood"}><Mood 
-                    style={{ fontSize: 25, marginRight:'40px', color:'grey'}} 
+                <a className="Iconbuttons" href={"/search/mood"}><Mood 
+                    style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Search Mood" 
                     /></a>
-                <a href={"/account"}><Account
-                    style={{ fontSize: 25, marginRight:'40px', color:'grey'}} 
+                <a className="Iconbuttons" href={"/account"}><Account
+                    style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Account" 
                     /></a>    
             </Tabs>
