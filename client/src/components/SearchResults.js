@@ -1,15 +1,25 @@
 import React from "react";
+import "./SearchResults.css";
 
 function SearchResults(props) {
   return (
-    <ul className="list-group search-results">
+    <div className="card">
       {props.results.map((item) => (
-        <li key={item.id} className="list-group-item">
-            
-          <img alt="" src={item.images[2].url} className="img-fluid" />
-        </li>
+        <div className="content">
+          <ul>
+            <li key={item.id} className="list-group-item">
+              <img alt="" src={item.images[2].url} className="img-fluid" />
+            </li>
+            <li>
+              <strong>Genre:</strong> {item.genres[1]}
+            </li>
+            <li>
+              <strong>Followers:</strong> {item.followers.total}
+            </li>
+          </ul>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 
