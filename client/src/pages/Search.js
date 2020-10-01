@@ -1,22 +1,29 @@
 import React from "react";
-
 import SpotifyWebApi from "spotify-web-api-js";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults"
+import Login from '../components/Login'
 
 const spotifyApi = new SpotifyWebApi();
 
 class Search extends React.Component {
   state = {
+    loggedIn: false,
     search: "",
     results: [],
     error: "",
   };
 
   componentDidMount() {
+    this.handleToken();
+  }
+
+  handleToken = () => {
     const token = sessionStorage.getItem("token");
-    spotifyApi.setAccessToken(token);
-    // console.log(this.state)
+    if (token) {
+      spotifyApi.setAccessToken(token);
+      this.setState({ loggedIn: true })
+    }
   }
 
   handleInputChange = (event) => {
@@ -37,12 +44,18 @@ class Search extends React.Component {
     console.log(this.state)
     return (
       <div>
-        <SearchForm
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-        />
-
-        <SearchResults results={this.state.results} />
+        {!this.state.loggedIn &&
+          <Login></Login>
+        }
+        {this.state.loggedIn &&
+          <div>
+            <SearchForm
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+            />
+            <SearchResults results={this.state.results} />
+          </div>
+        }
       </div>
     );
   }
