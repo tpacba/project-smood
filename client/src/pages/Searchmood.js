@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from '../components/Slider';
 import SpotifyWebApi from 'spotify-web-api-js';
+import Login from '../components/Login';
+
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -8,14 +10,22 @@ const spotifyApi = new SpotifyWebApi();
 
 class Searchmood extends React.Component {
   state = {
+    loggedIn: false,
     value: "",
     mood: "",
     playlists: []
   }
 
   componentDidMount() {
+    this.handleToken();
+  }
+
+  handleToken = () => {
     const token = sessionStorage.getItem("token");
-    spotifyApi.setAccessToken(token);
+    if (token) {
+      spotifyApi.setAccessToken(token);
+      this.setState({ loggedIn: true })
+    }
   }
 
   handleChange = (event, newValue) => {
@@ -65,12 +75,18 @@ class Searchmood extends React.Component {
     console.log(this.state)
     return (
       <div>
-        <center>
-          <Slider
-            handleChange={this.handleChange}
-            value={this.state.value}
-          />
-        </center>
+        {!this.state.loggedIn &&
+          <Login></Login>
+        }
+        {this.state.loggedIn &&
+          <center>
+            <Slider
+              handleChange={this.handleChange}
+              value={this.state.value}
+            />
+          </center>
+        }
+
       </div>
     );
   }

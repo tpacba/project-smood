@@ -1,5 +1,6 @@
 import React from "react";
 import SpotifyWebApi from "spotify-web-api-js";
+import Login from '../components/Login';
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -13,7 +14,6 @@ class Account extends React.Component {
       type: "",
       is_active: false
     }]
-
   }
 
   componentDidMount() {
@@ -63,7 +63,12 @@ class Account extends React.Component {
     console.log(this.state)
     return (
       <div>
-
+        {!this.state.loggedIn &&
+          <Login></Login>
+        }
+        {this.state.loggedIn &&
+          <div></div>
+        }
       </div>
     );
   }
