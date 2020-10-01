@@ -9,30 +9,32 @@ import backward from '../../assets/icons/backward.png';
 const spotifyApi = new SpotifyWebApi();
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    const token = sessionStorage.getItem("token")
-
-    if (token) {
-      spotifyApi.setAccessToken(token);
-    }
-
-    this.state = {
-      loggedIn: token ? true : false,
-      is_playing: false,
-      nowPlaying: { song: 'Not Checked', artist: 'Not Checked', albumArt: '' }
-    }
+  state = {
+    loggedIn: false,
+    is_playing: false,
+    nowPlaying: { song: 'Not Checked', artist: 'Not Checked', albumArt: '' }
   }
 
   componentDidMount() {
+    this.handleToken()
     this.getNowPlaying()
+  }
+
+  componentDidUpdate() {
+    this.getNowPlaying()
+  }
+
+  handleToken() {
+    const token = sessionStorage.getItem("token");
+    if (token) {
+      spotifyApi.setAccessToken(token);
+      this.setState({ loggedIn: true })
+    }
   }
 
   getNowPlaying() {
     spotifyApi.getMyCurrentPlaybackState()
       .then((res) => {
-        console.log(res);
         this.setState({
           is_playing: res.is_playing,
           nowPlaying: {
@@ -46,13 +48,11 @@ class App extends React.Component {
   }
 
   playPlayback() {
-    this.getNowPlaying();
     spotifyApi.play()
       .then(() => this.setState({ is_playing: true }))
       .catch(err => console.log(err))
   }
   pausePlayback() {
-    this.getNowPlaying();
     spotifyApi.pause()
       .then(() => this.setState({ is_playing: false }))
       .catch(err => console.log(err))
@@ -60,26 +60,15 @@ class App extends React.Component {
 
   nextPlayback() {
     spotifyApi.skipToNext()
-      .then(() => {
-        this.getNowPlaying();
-        console.log("new state", this.state)
-        this.forceUpdate();
-      })
       .catch(err => console.log(err))
   }
 
   previousPlayback() {
     spotifyApi.skipToPrevious()
-      .then(() => {
-        this.getNowPlaying();
-        console.log("new state", this.state)
-        this.forceUpdate();
-      })
       .catch(err => console.log(err))
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <div className="container">

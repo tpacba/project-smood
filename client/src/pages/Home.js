@@ -18,12 +18,11 @@ class Home extends React.Component {
     this.handleToken();
   }
 
-  handleToken() {
+  handleToken = () => {
     const token = sessionStorage.getItem("token");
     if (token) {
-      console.log(token);
       spotifyApi.setAccessToken(token);
-      this.setState({ loggedIn : true})
+      this.setState({ loggedIn: true })
     }
   }
 
@@ -32,17 +31,17 @@ class Home extends React.Component {
       <div>
         <div></div>
         <div className="App">
-          {!this.state.loggedIn && 
-          <Button variant="contained" size="large" color="default" onClick={() =>
-            (window.location.href =
-              process.env.REACT_APP_CALLBACK ||
-              "http://localhost:8888/api/login")
-          }>
-            Login to Spotify
+          {!this.state.loggedIn &&
+            <Button variant="contained" size="large" color="default" onClick={() =>
+              (window.location.href =
+                process.env.REACT_APP_CALLBACK ||
+                "http://localhost:8888/api/login")
+            }>
+              Login to Spotify
           </Button>
           }
           <div className="Player">
-          {this.state.loggedIn && (<MusicPlayer />)}
+            {this.state.loggedIn && (<MusicPlayer />)}
           </div>
         </div>
       </div>

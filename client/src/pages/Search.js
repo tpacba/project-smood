@@ -25,9 +25,10 @@ class Search extends React.Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-     spotifyApi.search(this.state.search, ["track", "artist"])
-       .then((res) => { console.log(res) 
-       this.setState({ results: res.artists.items});
+    spotifyApi.search(this.state.search, ["track", "artist"])
+      .then((res) => {
+        console.log(res)
+        this.setState({ results: res.artists.items });
       })
       .catch(err => this.setState({ error: err.message }));
   };
@@ -40,7 +41,7 @@ class Search extends React.Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        
+
         <SearchResults results={this.state.results} />
       </div>
     );

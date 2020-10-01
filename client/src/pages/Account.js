@@ -22,7 +22,7 @@ class Account extends React.Component {
     this.getDevices();
   }
 
-  handleToken() {
+  handleToken = () => {
     const token = sessionStorage.getItem("token");
     if (token) {
       spotifyApi.setAccessToken(token);
@@ -30,7 +30,7 @@ class Account extends React.Component {
     }
   }
 
-  getUserInfo() {
+  getUserInfo = () => {
     spotifyApi.getMe()
       .then(res => {
         this.setState({
@@ -41,7 +41,7 @@ class Account extends React.Component {
       .catch(err => console.log(err))
   }
 
-  getDevices() {
+  getDevices = () => {
     spotifyApi.getMyDevices()
       .then(res => {
         const devices = res.devices.map(item => (
