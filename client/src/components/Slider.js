@@ -96,8 +96,14 @@ function Slidershort(props) {
         />
         
       </div> */}
-      <Typography gutterBottom>pretto.fr</Typography>
-      <PrettoSlider valueLabelDisplay="off" aria-label="pretto slider" marks={marks} defaultValue={20} />
+      <PrettoSlider
+        valueLabelDisplay="off"
+        aria-label="pretto slider"
+        step={20}
+        marks={marks}
+        defaultValue={props.value} 
+        onChangeCommitted={props.handleChange}
+        />
     </div>
   );
 }
