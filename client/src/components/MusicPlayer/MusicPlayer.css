@@ -45,10 +45,10 @@ body {
 .container {
   position: absolute;
   height: 300pt;
-  width: 250pt;
-  margin: auto;
+  width: 300pt;
+  margin: 250px;
   top: 0;
-  left: 0;
+  left: -210px;
   right: 0;
   bottom: 0;
   overflow: hidden;
@@ -91,8 +91,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 20px;
-  bottom: 21%;
-  left: 28%;
+  bottom: 0%;
+  left: 10%;
 }
 
 /* track title */
@@ -101,9 +101,9 @@ body {
   z-index: 4;
   color: white;
   font-family: "Montserrat", sans-serif;
-  font-size: 17px;
-  bottom: 16%;
-  left: 28%;
+  font-size: 12px;
+  bottom: 7%;
+  left: 10%;
 }
 
 /* style for play and pause images */
@@ -113,10 +113,10 @@ body {
   width: 50px;
   filter: invert(1);
   cursor: pointer;
-  bottom: 15%;
+  bottom: 20%;
   z-index: 4;
   font-size: 53px;
-  left: 9%;
+  left: 10%;
 }
 
 /* style for next and previous song images */
