@@ -45,17 +45,18 @@ body {
 .container {
   position: absolute;
   height: 300pt;
-  width: 300pt;
-  margin: 250px;
-  top: 0;
-  left: -210px;
+
+  width: 250pt;
+  margin: auto;
+  top: 250px;
+  left: 0;
   right: 0;
   bottom: 0;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000000;
+  background: rgb(70, 67, 67);
   border-radius: 10px;
   box-shadow: 0 0 10px #000000;
 }

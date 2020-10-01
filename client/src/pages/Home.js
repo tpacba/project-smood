@@ -33,7 +33,7 @@ class Home extends React.Component {
         <div></div>
         <div className="App">
           {!this.state.loggedIn && 
-          <Button variant="contained" size="large" color="primary" onClick={() =>
+          <Button variant="contained" size="large" color="default" onClick={() =>
             (window.location.href =
               process.env.REACT_APP_CALLBACK ||
               "http://localhost:8888/api/login")
