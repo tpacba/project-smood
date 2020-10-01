@@ -3,10 +3,7 @@ import Slider from '../components/Slider';
 import SpotifyWebApi from 'spotify-web-api-js';
 import Login from '../components/Login';
 
-
 const spotifyApi = new SpotifyWebApi();
-
-
 
 class Searchmood extends React.Component {
   state = {
@@ -18,6 +15,11 @@ class Searchmood extends React.Component {
 
   componentDidMount() {
     this.handleToken();
+  }
+
+  componentDidUpdate() {
+    // const randomInt = Math.floor(Math.random() * Math.floor(this.state.playlists.length - 1))
+    this.playPlaylist(this.state.playlists[0])
   }
 
   handleToken = () => {
@@ -42,8 +44,8 @@ class Searchmood extends React.Component {
       search,
       ["playlist"]
     ).then(res => {
-      this.setState({ playlists: res.playlists.items })
-      this.playPlaylist(res.playlists.items[0].uri)
+      console.log(res.playlists.items)
+      this.setState({ playlists: res.playlists.items.map(item => (item.uri)) })
     })
   }
 
