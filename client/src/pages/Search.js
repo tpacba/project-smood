@@ -39,6 +39,7 @@ class Search extends React.Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
+        
         <SearchResults results={this.state.results} />
       </div>
     );
