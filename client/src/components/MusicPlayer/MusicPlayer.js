@@ -85,11 +85,13 @@ class App extends React.Component {
         <div className="container">
           <div className="box"></div>
           {/*pic of artist  */}
-          <img src={this.state.nowPlaying.albumArt} id="thumbnail" alt="" />
+          <img alt="album art" src={this.state.nowPlaying.albumArt} id="thumbnail" />
+
           <div className="song-artist">{this.state.nowPlaying.artist}</div>
           <div className="song-title">{this.state.nowPlaying.song}</div>
 
           {/* play button */}
+
           <img
             alt=""
             src={play}
