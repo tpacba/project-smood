@@ -38,10 +38,9 @@ class App extends React.Component {
         <div style={{ flex: "1", flexDirection: "row", alignItems: "center" }}>
           <Navbar />
           <Wrapper>
-            <Route exact path="/" component={Home} />
             <Route exact path="/account" component={Account} />
             <Route exact path="/search" component={Search} />
-            <Route exact path="/search/mood" component={Searchmood} />
+            <Route exact path="/" component={Searchmood} />
           </Wrapper>
         </div>
       </Router>

@@ -33,7 +33,7 @@ export default function () {
                     style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Search" 
                     /></a>
-                <a className="Iconbuttons" href={"/search/mood"}><Mood 
+                <a className="Iconbuttons" href={"/"}><Mood 
                     style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Search Mood" 
                     /></a>
