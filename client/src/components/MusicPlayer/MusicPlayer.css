@@ -45,10 +45,9 @@ body {
 .container {
   position: absolute;
   height: 300pt;
-
-  width: 250pt;
-  margin: auto;
-  top: 250px;
+  width: 320pt;
+  margin-top: 280px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -58,7 +57,7 @@ body {
   align-items: center;
   background: rgb(70, 67, 67);
   border-radius: 10px;
-  box-shadow: 0 0 10px #000000;
+  box-shadow: 0 0 3px #000000;
 }
 
 /* container for play, pause, previous track, next track, and progress bar  */
