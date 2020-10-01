@@ -2,6 +2,7 @@ import React from "react";
 import Slider from '../components/Slider';
 import SpotifyWebApi from 'spotify-web-api-js';
 import Login from '../components/Login';
+import MusicPlayer from '../components/MusicPlayer/MusicPlayer'
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -63,13 +64,13 @@ class Searchmood extends React.Component {
 
   valueToMood = (value) => {
     switch (value) {
-      case 0: return "upbeat";
-      case 20: return "down";
-      case 40: return "angry";
+      case 0: return "peaceful";
+      case 20: return "chill";
+      case 40: return "upbeat";
       case 60: return "energetic";
       case 80: return "peaceful";
-      case 100: return "chill";
-      default: return "happy"
+      case 100: return "down";
+      default: return "angry"
     }
   }
 
@@ -86,6 +87,7 @@ class Searchmood extends React.Component {
               handleChange={this.handleChange}
               value={this.state.value}
             />
+            <MusicPlayer></MusicPlayer>
           </center>
         }
 

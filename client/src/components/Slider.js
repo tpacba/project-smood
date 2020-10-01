@@ -2,6 +2,12 @@ import React from "react";
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import Angry from '@material-ui/icons/Whatshot';
+import Upbeat from '@material-ui/icons/Mood';
+import Energetic from '@material-ui/icons/FlashOn';
+import Peaceful from '@material-ui/icons/AirlineSeatFlat';
+import Chill from '@material-ui/icons/AcUnit';
+import Down from '@material-ui/icons/SentimentVeryDissatisfied';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,27 +21,27 @@ const useStyles = makeStyles((theme) => ({
 const marks = [
   {
     value: 0,
-    label: 'Upbeat',
+    label: <Peaceful/>,
   },
   {
     value: 20,
-    label: 'Down',
+    label: <Chill/>,
   },
   {
     value: 40,
-    label: 'Angry',
+    label: <Upbeat/>,
   },
   {
     value: 60,
-    label: 'Energetic',
+    label: <Energetic/>,
   },
   {
     value: 80,
-    label: 'Peaceful',
+    label: <Down/>,
   },
   {
     value: 100,
-    label: 'Chill',
+    label: <Angry/>,
   },
 ];
 
@@ -47,7 +53,7 @@ const PrettoSlider = withStyles({
   thumb: {
     height: 24,
     width: 24,
-    backgroundColor: '#fff',
+    backgroundColor: '#285f00',
     border: '2px solid currentColor',
     marginTop: -8,
     marginLeft: -12,
