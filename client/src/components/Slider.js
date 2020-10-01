@@ -55,7 +55,7 @@ function Slidershort(props) {
           Choose your Mood
       </Typography>
         <Slider
-          value={props.value}
+          label={props.value}
           getAriaValueText={valuetext}
           aria-labelledby="discrete-slider-custom"
           step={20}

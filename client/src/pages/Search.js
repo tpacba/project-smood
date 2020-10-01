@@ -12,14 +12,14 @@ class Search extends React.Component {
   };
 
   componentDidMount() {
-    const token = sessionStorage.getItem("token");
+    // const token = sessionStorage.getItem("token");
 
-    spotifyApi.setAccessToken(token);
+    // spotifyApi.setAccessToken(token);
 
-    spotifyApi.search(
-      "roadhouse%20blues",
-      ["track", "artist"]
-    ).then(res => console.log(res))
+    // spotifyApi.search(
+    //   "roadhouse%20blues",
+    //   ["track", "artist"]
+    // ).then(res => console.log(res))
   }
 
   render() {
