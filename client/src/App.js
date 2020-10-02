@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Search from './pages/Search';
 import Searchmood from './pages/Searchmood';
 import Account from './pages/Account';
-import Home from './pages/Home';
 import Wrapper from './components/Wrapper';
 import Navbar from './components/Navbar';
+import SmoodB from './images/smoodbackground.jpg';
+
 
 class App extends React.Component {
   constructor() {
@@ -34,8 +35,22 @@ class App extends React.Component {
 
   render() {
     return (
+    
       <Router>
-        <div style={{ flex: "1", flexDirection: "row", alignItems: "center" }}>
+        <div 
+        style={{ 
+          flex: "1", 
+          flexDirection: "row", 
+          alignItems: "center", 
+          backgroundImage: `url(${SmoodB})`, 
+          backgroundSize: "cover", 
+          backgroundRepeat: "no-repeat",  
+          width: "100%",
+          backgroundPosition: "center",
+          padding: "0",
+          border: "0"
+          
+          }}>
           <Navbar />
           <Wrapper>
             <Route exact path="/account" component={Account} />
