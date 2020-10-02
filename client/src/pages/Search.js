@@ -1,8 +1,9 @@
 import React from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults"
+import SearchResults from "../components/SearchResults/SearchResults"
 import Login from '../components/Login'
+import { set } from "mongoose";
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -13,6 +14,7 @@ class Search extends React.Component {
     results: [],
     error: "",
     type: "track",
+    render_results: false
   };
 
   componentDidMount() {
@@ -32,9 +34,10 @@ class Search extends React.Component {
   };
 
   handleTypeInput = (event) => {
-    this.setState({ type: event.target.value });
-   
-    console.log("Hello")
+    this.setState({
+      type: event.target.value,
+      render_results: false
+    });
   };
 
   handleFormSubmit = (event) => {
@@ -43,14 +46,15 @@ class Search extends React.Component {
     spotifyApi
       .search(this.state.search, [this.state.type])
       .then((res) => {
-        console.log(res);
-        this.setState({ results: res[this.state.type + "s"].items });
+        this.setState({ 
+          results: res[this.state.type + "s"].items,
+          render_results: true
+        });
       })
       .catch((err) => this.setState({ error: err.message }));
   };
 
   render() {
-  
     return (
       <div>
         {!this.state.loggedIn && <Login></Login>}
@@ -61,7 +65,7 @@ class Search extends React.Component {
               handleInputChange={this.handleInputChange}
               handleTypeInput={this.handleTypeInput}
             />
-            {this.state.results ? (
+            {this.state.render_results ? (
               <SearchResults type={this.state.type} results={this.state.results} />
             ) : (<div></div>)}
           </div>
