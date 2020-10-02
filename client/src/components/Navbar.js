@@ -8,6 +8,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Mood from '@material-ui/icons/SentimentSatisfiedAlt';
 import Account from '@material-ui/icons/AccountBox';
 import '../App.css';
+import { Tooltip } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
@@ -29,18 +30,18 @@ export default function () {
                 textColor="primary"
                 centered
             >
-                <a className="Iconbuttons" href={"/search"}><SearchIcon 
+                <Tooltip title="search"><a className="Iconbuttons" href={"/search"}><SearchIcon 
                     style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Search" 
-                    /></a>
-                <a className="Iconbuttons" href={"/"}><Mood 
+                    /></a></Tooltip>
+                <Tooltip title="search mood"><a className="Iconbuttons" href={"/"}><Mood 
                     style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Search Mood" 
-                    /></a>
-                <a className="Iconbuttons" href={"/account"}><Account
+                    /></a></Tooltip>
+                <Tooltip title="account"><a className="Iconbuttons" href={"/account"}><Account
                     style={{ fontSize: 45, minWidth:'120px', color:'4C4C4B'}} 
                     label="Account" 
-                    /></a>    
+                    /></a></Tooltip>    
             </Tabs>
         </Paper>
         </div>
