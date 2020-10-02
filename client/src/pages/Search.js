@@ -1,7 +1,7 @@
 import React from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults"
+import SearchResults from "../components/SearchResults/SearchResults"
 import Login from '../components/Login'
 
 const spotifyApi = new SpotifyWebApi();
@@ -33,7 +33,7 @@ class Search extends React.Component {
 
   handleTypeInput = (event) => {
     this.setState({ type: event.target.value });
-   
+
     console.log("Hello")
   };
 
@@ -43,14 +43,12 @@ class Search extends React.Component {
     spotifyApi
       .search(this.state.search, [this.state.type])
       .then((res) => {
-        console.log(res);
         this.setState({ results: res[this.state.type + "s"].items });
       })
       .catch((err) => this.setState({ error: err.message }));
   };
 
   render() {
-  
     return (
       <div>
         {!this.state.loggedIn && <Login></Login>}
