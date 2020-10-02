@@ -52,14 +52,6 @@ function MediaControlCard(props) {
 
     console.log(track)
 
-    // const newArtistList = props.results.map(item => {
-    //     const array = {};
-    //     item.artists.forEach(element => {
-    //         array.push(element.name)
-    //     });
-    //     return array;
-    // })
-
     return (
         <div>
             {track.map(item => (

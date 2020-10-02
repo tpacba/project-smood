@@ -27,50 +27,45 @@ function MediaControlCard(props) {
     const classes = useStyles();
     const theme = useTheme();
 
-    const track = [];
+    const album = [];
 
     console.log(props.results)
 
     props.results.forEach(element => {
 
-        const newTrack = {
+        const newAlbum = {
             artist: "",
-            song: "",
             album: "",
             album_image: "",
+            release_date: "",
             uri: ""
         }
 
-        newTrack.artist = element.artists.map(item => (item.name)).join(", ");
-        newTrack.song = element.name;
-        newTrack.album = element.album.name;
-        newTrack.album_image = element.album.images[1].url;
-        newTrack.uri = element.uri;
+        newAlbum.artist = element.artists.map(item => (item.name)).join(", ");
+        newAlbum.album = element.name;
+        newAlbum.album_image = element.images[1].url;
+        newAlbum.release_date = element.release_date.split("-")[0];
+        newAlbum.uri = element.uri;
 
-        track.push(newTrack)
+        album.push(newAlbum)
     })
 
-    console.log(track)
-
-    // const newArtistList = props.results.map(item => {
-    //     const array = {};
-    //     item.artists.forEach(element => {
-    //         array.push(element.name)
-    //     });
-    //     return array;
-    // })
+    console.log(album)
 
     return (
         <div>
-            {track.map(item => (
+            {album.map(item => (
                 <Card key={item.uri} className={classes.root}>
                     <div className={classes.details}>
                         <CardContent className={classes.content}>
                             <Typography component="h5" variant="h5">
-                                {item.song}
+                                {item.album}
                     </Typography>
                             <Typography variant="subtitle1" color="textSecondary">
                                 {item.artist}
+                    </Typography>
+                    <Typography variant="subtitle1" color="textSecondary">
+                                {item.release_date}
                     </Typography>
                         </CardContent>
                     </div>
