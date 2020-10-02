@@ -108,7 +108,7 @@ function SearchForm(props) {
           type="submit"
           onClick={props.handleFormSubmit}
           variant="contained"
-          color="primary"
+          color="default"
           style={{
             marginTop: "1rem",
           }}
