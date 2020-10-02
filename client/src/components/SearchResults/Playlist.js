@@ -27,50 +27,54 @@ function MediaControlCard(props) {
     const classes = useStyles();
     const theme = useTheme();
 
-    const album = [];
+    const playlist = [];
 
     console.log(props.results)
 
     props.results.forEach(element => {
 
-        const newAlbum = {
-            artist: "",
-            album: "",
-            album_image: "",
-            release_date: "",
+        const newPlaylist = {
+            description: "",
+            playlist: "",
+            playlist_image: "",
+            track_length: "",
+            owner: "",
             uri: ""
         }
 
-        newAlbum.artist = element.artists.map(item => (item.name)).join(", ");
-        newAlbum.album = element.name;
-        newAlbum.album_image = element.images[1].url;
-        newAlbum.release_date = element.release_date.split("-")[0];
-        newAlbum.uri = element.uri;
+        newPlaylist.description = element.description;
+        newPlaylist.playlist = element.name;
+        newPlaylist.playlist_image = (element.images.length ? (element.images[0].url) : (""));
+        newPlaylist.owner = element.owner.display_name;
+        newPlaylist.track_length = element.tracks.total;
+        newPlaylist.uri = element.uri;
 
-        album.push(newAlbum)
+        playlist.push(newPlaylist)
     })
+
+    console.log(playlist)
 
     return (
         <div>
-            {album.map(item => (
+            {playlist.map(item => (
                 <Card key={item.uri} className={classes.root}>
                     <div className={classes.details}>
                         <CardContent className={classes.content}>
                             <Typography component="h5" variant="h5">
-                                {item.album}
+                                {item.playlist}
                     </Typography>
                             <Typography variant="subtitle1" color="textSecondary">
-                                {item.artist}
+                                {item.description}
                     </Typography>
                     <Typography variant="subtitle2" color="textSecondary">
-                                {item.release_date}
+                                Created by {item.owner} - {item.track_length} songs
                     </Typography>
                         </CardContent>
                     </div>
                     <CardMedia
                         className={classes.cover}
-                        image={item.album_image}
-                        title={item.album}
+                        image={item.playlist_image}
+                        title={item.playlist}
                     />
                 </Card>
             ))}

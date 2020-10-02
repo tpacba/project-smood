@@ -2,6 +2,7 @@ import React from "react";
 import "./SearchResults.css";
 import Track from './Track';
 import Album from './Album';
+import Playlist from './Playlist'
 
 function SearchResults(props) {
   return (
@@ -16,6 +17,11 @@ function SearchResults(props) {
         <Album
           results={props.results}
         ></Album>
+      }
+      {props.type === "playlist" &&
+        <Playlist
+          results={props.results}
+        ></Playlist>
       }
 
 

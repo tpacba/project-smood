@@ -49,9 +49,7 @@ function MediaControlCard(props) {
 
         track.push(newTrack)
     })
-
-    console.log(track)
-
+    
     return (
         <div>
             {track.map(item => (
@@ -63,6 +61,9 @@ function MediaControlCard(props) {
                     </Typography>
                             <Typography variant="subtitle1" color="textSecondary">
                                 {item.artist}
+                    </Typography>
+                    <Typography variant="subtitle2" color="textSecondary">
+                                {item.album}
                     </Typography>
                         </CardContent>
                     </div>
