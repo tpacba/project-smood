@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Search from './pages/Search';
 import Searchmood from './pages/Searchmood';
 import Account from './pages/Account';
-import Home from './pages/Home';
 import Wrapper from './components/Wrapper';
 import Navbar from './components/Navbar';
 
