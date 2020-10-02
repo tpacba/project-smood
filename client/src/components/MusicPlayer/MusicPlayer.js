@@ -1,7 +1,7 @@
 import React from 'react';
 import "./MusicPlayer.css";
 import SpotifyWebApi from 'spotify-web-api-js';
-
+import pause from '../../assets/icons/pause.png';
 import play from '../../assets/icons/play.png';
 import forward from '../../assets/icons/forward.png';
 import backward from '../../assets/icons/backward.png';
