@@ -33,17 +33,17 @@ export default function () {
     const bull = <span className={classes.bullet}>•</span>;
     return (
         <div>
-        <Button variant="contained" size="large" color="default" onClick={() =>
+        <center><Button variant="contained" size="large" color="default" onClick={() =>
             (window.location.href =
                 process.env.REACT_APP_CALLBACK ||
                 "http://localhost:8888/api/login")
         }>
             <Icon icon={spotifyIcon} /> Login
-        </Button>
+        </Button></center>
 
         <Card className={classes.root} variant="outlined">
             <CardContent>
-                <Typography variant="body2" component="p">
+                <Typography variant="body2" component="p" style={{textAlign: "center"}}>
                 Have a Spotify Premium account running on another device to have full access      
                 </Typography>
             </CardContent>
