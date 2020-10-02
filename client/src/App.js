@@ -49,8 +49,8 @@ class App extends React.Component {
           backgroundPosition: "center",
           padding: "0",
           border: "0"
-          
           }}>
+            
           <Navbar />
           <Wrapper>
             <Route exact path="/account" component={Account} />

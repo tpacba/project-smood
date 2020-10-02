@@ -6,7 +6,7 @@ import Angry from '@material-ui/icons/Whatshot';
 import Upbeat from '@material-ui/icons/Mood';
 import Energetic from '@material-ui/icons/FlashOn';
 import Peaceful from '@material-ui/icons/AirlineSeatFlat';
-import Chill from '@material-ui/icons/AcUnit';
+import AcUnitIcon from '@material-ui/icons/AcUnit';
 import Down from '@material-ui/icons/SentimentVeryDissatisfied';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +25,7 @@ const marks = [
   },
   {
     value: 20,
-    label: <Chill/>,
+    label: <AcUnitIcon/>,
   },
   {
     value: 40,
