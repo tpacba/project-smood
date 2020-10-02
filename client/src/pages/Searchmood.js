@@ -64,13 +64,13 @@ class Searchmood extends React.Component {
 
   valueToMood = (value) => {
     switch (value) {
-      case 0: return "peaceful";
-      case 20: return "chill";
-      case 40: return "upbeat";
-      case 60: return "energetic";
-      case 80: return "down";
-      case 100: return "angry";
-      default: return "party"
+      case 0: return "sleep";
+      case 20: return "at home";
+      case 40: return "party";
+      case 60: return "workout";
+      case 80: return "blues";
+      case 100: return "metal";
+      default: return "pop culture"
     }
   }
 
