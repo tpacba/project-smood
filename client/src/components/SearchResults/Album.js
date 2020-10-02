@@ -43,7 +43,7 @@ function MediaControlCard(props) {
 
         newAlbum.artist = element.artists.map(item => (item.name)).join(", ");
         newAlbum.album = element.name;
-        newAlbum.album_image = element.images[1].url;
+        newAlbum.album_image = (element.images.length ? element.images[1].url : "");
         newAlbum.release_date = element.release_date.split("-")[0];
         newAlbum.uri = element.uri;
 

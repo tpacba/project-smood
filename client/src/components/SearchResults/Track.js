@@ -44,7 +44,7 @@ function MediaControlCard(props) {
         newTrack.artist = element.artists.map(item => (item.name)).join(", ");
         newTrack.song = element.name;
         newTrack.album = element.album.name;
-        newTrack.album_image = element.album.images[1].url;
+        newTrack.album_image = (element.album.images.length ? element.album.images[1].url : "");
         newTrack.uri = element.uri;
 
         track.push(newTrack)
