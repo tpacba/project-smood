@@ -30,19 +30,21 @@ class Search extends React.Component {
   };
 
   handleInputChange = (event) => {
+    console.log(event.target.value)
     this.setState({ search: event.target.value });
   };
 
   handleTypeInput = (event) => {
+    // console.log(event.currentTarget.dataset.value.toLowerCase())
     this.setState({
-      type: event.target.value,
+      type: event.currentTarget.dataset.value.toLowerCase(),
       render_results: false
     });
   };
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.type)
+    // console.log(this.state.type)
     spotifyApi
       .search(this.state.search, [this.state.type])
       .then((res) => {
@@ -61,6 +63,7 @@ class Search extends React.Component {
         {this.state.loggedIn && (
           <div>
             <SearchForm
+              type={this.state.type}
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
               handleTypeInput={this.handleTypeInput}

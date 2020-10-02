@@ -28,8 +28,6 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
     "querystring": "^0.2.0",
-    "request": "^2.88.2",
-    "reshake": "^1.2.1",
-    "styled-components": "^5.2.0"
+    "request": "^2.88.2"
   }
 }
