@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Saira ExtraCondensed&display=swap");
 
 div,
 button {
@@ -12,13 +12,13 @@ a {
 .navbar {
   color: black;
   background-color: #e3f2fd;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Saira ExtraCondensed", sans-serif;
 }
 
 .secondhead {
   color: black;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Saira ExtraCondensed", sans-serif;
 }
 .loginstyle {
   color: black;
@@ -88,7 +88,7 @@ body {
   position: absolute;
   z-index: 4;
   color: rgb(193, 255, 6);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Saira ExtraCondensed", sans-serif;
   font-weight: bold;
   font-size: 20px;
   bottom: 0%;
@@ -100,7 +100,7 @@ body {
   position: absolute;
   z-index: 4;
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Saira ExtraCondensed", sans-serif;
   font-size: 12px;
   bottom: 7%;
   left: 10%;
@@ -152,7 +152,7 @@ body {
   bottom: -7.5%;
   left: 17%;
   z-index: 4;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Saira ExtraCondensed", sans-serif;
   font-size: 13px;
   color: white;
   align-items: center;
@@ -167,7 +167,7 @@ body {
   bottom: -1%;
   right: 11%;
   z-index: 4;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Saira ExtraCondensed", sans-serif;
   font-size: 13px;
   align-items: center;
   color: rgb(193, 255, 6);

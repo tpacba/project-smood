@@ -10,6 +10,7 @@ import Account from '@material-ui/icons/AccountBox';
 import '../App.css';
 import { Tooltip } from '@material-ui/core';
 
+
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
@@ -21,7 +22,7 @@ export default function () {
 
     return (
         <div>
-        <Paper className={classes.root}>
+ 
         <center><Landanimsmall/></center>
     
             <Tabs
@@ -43,7 +44,7 @@ export default function () {
                     label="Account" 
                     /></a></Tooltip>    
             </Tabs>
-        </Paper>
+
         </div>
     );
 }

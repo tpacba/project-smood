@@ -1,6 +1,6 @@
-<svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1440" height="1500"  viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="SmoodBackground" clip-path="url(#clip0)">
-<rect width="1440" height="1024" fill="white"/>
+<rect width="1440" height="1500" fill="white"/>
 <g id="Group 1" opacity="0.45">
 <circle id="Ellipse 7" cx="1352" cy="84" r="1649" fill="#C9DEAF"/>
 <circle id="Ellipse 6" cx="1345" cy="94" r="1277" fill="#C6D6B2"/>
@@ -12,7 +12,7 @@
 </g>
 <defs>
 <clipPath id="clip0">
-<rect width="1440" height="1024" fill="white"/>
+<rect width="1440" height="1500" fill="white"/>
 </clipPath>
 </defs>
 </svg>
