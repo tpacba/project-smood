@@ -7,6 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
+import MenuList from '@material-ui/core/MenuList';
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
@@ -37,7 +38,7 @@ function SearchForm(props) {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (event) => {
     setAnchorEl(null);
   };
 
@@ -79,6 +80,7 @@ function SearchForm(props) {
           keepMounted
           open={open}
           onClose={handleClose}
+          onChange={props.handleTypeInput}
           PaperProps={{
             style: {
               maxHeight: ITEM_HEIGHT * 4.5,
@@ -88,10 +90,14 @@ function SearchForm(props) {
         >
           {options.map((option) => (
             <MenuItem
-              key={option.value}
+              data-value={option}
+              key={option}
+              data-my-value={option.value}
               selected={option === "Pyxis"}
-              onClick={handleClose}
-              onChange={props.handleTypeInput}
+              onClick={(event) => {
+                props.handleTypeInput(event);
+                handleClose();
+              }}
             >
               {option}
             </MenuItem>
@@ -107,7 +113,7 @@ function SearchForm(props) {
             marginTop: "1rem",
           }}
         >
-          SEARCH
+          SEARCH for {props.type}
         </Button>
       </div>
     </div>
