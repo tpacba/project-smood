@@ -44,7 +44,7 @@ body {
 /* container for music player */
 .container {
   position: absolute;
-  height: 300pt;
+  height: 400pt;
   width: 320pt;
   margin-top: 370px;
   top: 0;
@@ -63,7 +63,7 @@ body {
 /* container for play, pause, previous track, next track, and progress bar  */
 .box {
   position: absolute;
-  height: 50%;
+  height: 40%;
   width: 110%;
   background: -webkit-linear-gradient(
     45deg,
@@ -113,7 +113,7 @@ body {
   width: 50px;
   filter: invert(1);
   cursor: pointer;
-  bottom: 20%;
+  bottom: 14%;
   z-index: 4;
   font-size: 53px;
   left: 10%;
@@ -127,7 +127,7 @@ body {
   width: 30px;
   filter: invert(1);
   cursor: pointer;
-  bottom: 13.5%;
+  bottom: 5.5%;
   font-size: 40px;
   z-index: 4;
 }
@@ -140,7 +140,7 @@ body {
 /* unique style for previous song image */
 #previous-song {
   right: 10.3%;
-  bottom: 21.5%;
+  bottom: 14.5%;
 }
 
 /* style for current time of the track */

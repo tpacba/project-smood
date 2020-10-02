@@ -5,6 +5,8 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import SearchIcon from '@material-ui/icons/Search';
+import Mood from '@material-ui/icons/SentimentSatisfiedAlt';
 
 //Spotify Icon
 // npm install --save-dev @iconify/react @iconify/icons-mdi
@@ -33,6 +35,9 @@ export default function () {
     const bull = <span className={classes.bullet}>•</span>;
     return (
         <div>
+          <br></br>
+          <br></br>
+      
         <center><Button variant="contained" size="large" color="default" onClick={() =>
             (window.location.href =
                 process.env.REACT_APP_CALLBACK ||
@@ -41,13 +46,17 @@ export default function () {
             <Icon icon={spotifyIcon} /> Login
         </Button></center>
 
-        <Card className={classes.root} variant="outlined">
+        <center><Card className={classes.root} variant="outlined" style={{ width: "520px"}}>
             <CardContent>
-                <Typography variant="body2" component="p" style={{textAlign: "center"}}>
-                Have a Spotify Premium account running on another device to have full access      
+                <Typography variant="body2" component="p" style={{ textAlign: "left", fontSize: "16px"}}>
+                Set or search your mood music with SMood Player to enjoy.
+Click the "<SearchIcon/>" button to select specific track, album, artist and playlist.
+Click the "<Mood/>" button to have us play our list of music to cater your mood.
+Login with your Spotify Premium account to connect with this app.
+      
                 </Typography>
             </CardContent>
-        </Card>
+        </Card></center>
     </div>
     );
 }
