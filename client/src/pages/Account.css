@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Saira ExtraCondensed&display=swap");
+
+.contain {
+    font-family: "Saira ExtraCondensed", sans-serif;
+    text-align: center;
+    color: #4C4C4B;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    margin-top: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.img{
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+}
+
+.username{
+    font-size: 150%;
+}
+.device{
+    font-size: 100%;
+}
