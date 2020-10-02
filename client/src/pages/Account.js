@@ -1,6 +1,7 @@
 import React from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import Login from '../components/Login';
+import './Account.css'
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -67,7 +68,18 @@ class Account extends React.Component {
           <Login></Login>
         }
         {this.state.loggedIn &&
-          <div></div>
+          <div className="contain">
+            <h1>Account</h1>
+            <br/>
+            <img src={this.state.profile_image} className="img" />
+            <br/>
+            <br/>
+            <p className="username">Username: {this.state.user_name}</p>
+            <p className="device">Device name: {this.state.device[0].name}</p>
+            <p className="device">Device type: {this.state.device[0].type}</p>
+            <div>
+              </div>
+          </div>
         }
       </div>
     );
