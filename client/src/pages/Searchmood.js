@@ -83,11 +83,12 @@ class Searchmood extends React.Component {
         }
         {this.state.loggedIn &&
           <center>
+          <br/>
             <Slider
               handleChange={this.handleChange}
               value={this.state.value}
             />
-            <MusicPlayer></MusicPlayer>
+            <MusicPlayer/>
           </center>
         }
 
