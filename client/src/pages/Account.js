@@ -86,8 +86,6 @@ class Account extends React.Component {
             <h1>Account</h1>
             <br/>
             <img src={this.state.profile_image} className="img" />
-            <br/>
-            <br/>
             <p className="username">Username: {this.state.user_name}</p>
             <p className="device">Device name: {this.state.device[0].name}</p>
             <p className="device">Device type: {thisDevice}</p>

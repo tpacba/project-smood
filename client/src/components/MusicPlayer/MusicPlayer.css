@@ -44,7 +44,7 @@ body {
 /* container for music player */
 .container {
   position: absolute;
-  height: 400pt;
+  height: 430pt;
   width: 320pt;
   margin-top: 370px;
   top: 0;
@@ -78,7 +78,7 @@ body {
 #thumbnail {
   position: absolute;
   width: 103%;
-  top: -7%;
+  top: 0%;
   transition: 1s;
   z-index: 3;
 }
