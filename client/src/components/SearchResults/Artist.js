@@ -34,7 +34,9 @@ function MediaControlCard(props) {
   }
 
   const playPlaylist = (uri) => {
-    spotifyApi.play({ uris: [uri] });
+    spotifyApi.play({
+      "context_uri": uri
+  })
   };
 
   const classes = useStyles();
