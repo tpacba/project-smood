@@ -11,11 +11,8 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "heroku-postbuild": "npm run build"
   },
-  "engines": {
-    "node": "12.18.2"
-},
   "author": "",
   "license": "ISC",
   "devDependencies": {
