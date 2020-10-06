@@ -32,10 +32,10 @@ const useStyles = makeStyles({
   },
 });
 
-const handleLogin = () => {
-  API.login()
-    .catch(err => console.log(err))
-}
+// const handleLogin = () => {
+//   API.login()
+//     .catch(err => console.log(err))
+// }
 
 export default function () {
   const classes = useStyles();
@@ -50,7 +50,9 @@ export default function () {
           variant="contained"
           size="large"
           color="default"
-          onClick={handleLogin}
+          onClick={() => {
+            console.log(process.env.REACT_APP_LOGIN);
+            window.location.href = process.env.REACT_APP_LOGIN || "https://localhost:8888/api/login"}}
         >
           <Icon icon={spotifyIcon} /> Login
         </Button>
