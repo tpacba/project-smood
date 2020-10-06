@@ -51,9 +51,9 @@ class App extends React.Component {
             
           <Navbar />
           <Wrapper>
+            <Route exact path="/" component={Searchmood} />
             <Route exact path="/account" component={Account} />
             <Route exact path="/search" component={Search} />
-            <Route exact path="/" component={Searchmood} />
           </Wrapper>
         </div>
       </Router>

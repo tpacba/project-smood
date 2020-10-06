@@ -24,7 +24,7 @@ router.route('/login')
                 response_type: 'code',
                 client_id: SPOTIFY_CLIENT_ID,
                 scope: 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-private user-read-private',
-                redirect_uri
+                redirect_uri: process.env.REDIRECT_URI
             }))
     })
 
@@ -36,7 +36,7 @@ router.route('/callback')
             url: 'https://accounts.spotify.com/api/token',
             form: {
                 code: code,
-                redirect_uri,
+                redirect_uri: process.env.REDIRECT_URI,
                 grant_type: 'authorization_code'
             },
             headers: {
@@ -50,7 +50,7 @@ router.route('/callback')
             var access_token = body.access_token;
             var refresh_token = body.access_token;
             let uri = process.env.FRONTEND_URI || 'http://localhost:3000'
-            res.redirect(uri + '/#' + querystring.stringify({
+            res.redirect(process.env.FRONTEND_URI + '/#' + querystring.stringify({
                 access_token: access_token,
                 refresh_token: refresh_token
             }))
