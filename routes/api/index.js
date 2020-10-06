@@ -8,9 +8,9 @@ const router = require("express").Router();
 let SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 let SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 
-let redirect_uri =
-    process.env.REDIRECT_URI ||
-    'http://localhost:8888/api/callback';
+// let redirect_uri =
+//     process.env.REDIRECT_URI ||
+//     'http://localhost:8888/api/callback';
 
 router.route('/test')
     .get(() => console.log("backend connection successful"))
@@ -24,7 +24,7 @@ router.route('/login')
                 response_type: 'code',
                 client_id: SPOTIFY_CLIENT_ID,
                 scope: 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-private user-read-private',
-                redirect_uri: process.env.REDIRECT_URI
+                redirect_uri: "https://projectsmood.herokuapp.com/api/callback"
             }))
     })
 
@@ -49,8 +49,8 @@ router.route('/callback')
         request.post(authOptions, function (error, response, body) {
             var access_token = body.access_token;
             var refresh_token = body.access_token;
-            let uri = process.env.FRONTEND_URI || 'http://localhost:3000'
-            res.redirect(process.env.FRONTEND_URI + '/#' + querystring.stringify({
+            // let uri = process.env.FRONTEND_URI || 'http://localhost:3000'
+            res.redirect("https://projectsmood.herokuapp.com/" + '/#' + querystring.stringify({
                 access_token: access_token,
                 refresh_token: refresh_token
             }))
