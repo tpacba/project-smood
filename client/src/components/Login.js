@@ -52,7 +52,7 @@ export default function () {
           color="default"
           onClick={() => {
             console.log(process.env.REACT_APP_LOGIN);
-            window.location.href = process.env.REACT_APP_LOGIN || "https://localhost:8888/api/login"}}
+            window.location.href = "/api/login"}}
         >
           <Icon icon={spotifyIcon} /> Login
         </Button>
