@@ -31,8 +31,6 @@ class App extends React.Component {
     return hashParams;
   }
 
-
-
   render() {
     return (
     
