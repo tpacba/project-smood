@@ -5,7 +5,6 @@ let querystring = require('querystring');
 
 const router = require("express").Router();
 
-
 let SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 let SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 
