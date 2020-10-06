@@ -51,8 +51,7 @@ export default function () {
           size="large"
           color="default"
           onClick={() => {
-            console.log("NEWEST LOGIN");
-            window.location.href = "/api/login"}}
+            API.login()}}
         >
           <Icon icon={spotifyIcon} /> Login
         </Button>
