@@ -32,11 +32,6 @@ const useStyles = makeStyles({
   },
 });
 
-// const handleLogin = () => {
-//   API.login()
-//     .catch(err => console.log(err))
-// }
-
 export default function () {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
@@ -51,7 +46,7 @@ export default function () {
           size="large"
           color="default"
           onClick={() => {
-            API.login()}}
+            window.location.href = "https://projectsmood-backend.herokuapp.com/api/login"}}
         >
           <Icon icon={spotifyIcon} /> Login
         </Button>
@@ -93,8 +88,8 @@ export default function () {
                 component="p"
                 style={{ textAlign: "center", fontSize: "12px" }}
               >
-                - Login with your Spotify Premium account to connect with this
-                app.
+                Login with your Spotify Premium account to connect with this
+                app!
               </Typography>
             </Typography>
           </CardContent>
