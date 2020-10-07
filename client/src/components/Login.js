@@ -7,6 +7,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import SearchIcon from "@material-ui/icons/Search";
 import Mood from "@material-ui/icons/SentimentSatisfiedAlt";
+import API from "../utils/API";
+
 
 //Spotify Icon
 // npm install --save-dev @iconify/react @iconify/icons-mdi
@@ -43,11 +45,8 @@ export default function () {
           variant="contained"
           size="large"
           color="default"
-          onClick={() =>
-            (window.location.href =
-              process.env.REACT_APP_CALLBACK ||
-              "http://localhost:8888/api/login")
-          }
+          onClick={() => {
+            window.location.href = process.env.REACT_APP_LOGIN || "http://localhost:8888/api/"}}
         >
           <Icon icon={spotifyIcon} /> Login
         </Button>
@@ -90,7 +89,7 @@ export default function () {
                 style={{ textAlign: "center", fontSize: "12px" }}
               >
                 Login with your Spotify Premium account to connect with this
-                app.
+                app!
               </Typography>
             </Typography>
           </CardContent>

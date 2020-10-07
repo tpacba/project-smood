@@ -3,7 +3,6 @@ import SpotifyWebApi from "spotify-web-api-js";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults/SearchResults"
 import Login from '../components/Login'
-import { set } from "mongoose";
 
 const spotifyApi = new SpotifyWebApi();
 
