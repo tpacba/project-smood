@@ -10,7 +10,7 @@ export default {
         window.location.href = 'https://accounts.spotify.com/authorize?' +
         querystring.stringify({
             response_type: 'code',
-            client_id: SPOTIFY_CLIENT_ID,
+            client_id: process.env.SPOTIFY_CLIENT_ID,
             scope: 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-private user-read-private',
             redirect_uri: "https://projectsmood.herokuapp.com/api/callback"
         })
