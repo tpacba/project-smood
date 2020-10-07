@@ -16,7 +16,7 @@ router.route('/login')
     .get(function (req, res) {
         console.log("Going to redirect /login");
         // res.setHeader("Content-Type", "text/html");
-        res.redirect('https://accounts.spotify.com/authorize?' +
+        res.redirect('https://cors-anywhere.herokuapp.com/https://accounts.spotify.com/authorize?' +
             querystring.stringify({
                 response_type: 'code',
                 client_id: process.env.SPOTIFY_CLIENT_ID,
@@ -30,7 +30,7 @@ router.route('/callback')
         console.log("Going to redirect /callback");
         let code = req.query.code || null
         let authOptions = {
-            url: 'https://accounts.spotify.com/api/token',
+            url: 'https://cors-anywhere.herokuapp.com/https://accounts.spotify.com/api/token',
             form: {
                 code: code,
                 redirect_uri: process.env.REDIRECT_URI,
