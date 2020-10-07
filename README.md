@@ -51,7 +51,7 @@ However, the user can also choose to search and play any track available dependi
 
 ### **Screenshots:**
 
-<img src="assets/Capture1.PNG">
+<img src="assets/Capture1.png">
 <img src="assets/Capture2.PNG">
 <img src="assets/Capture3.PNG">
 
