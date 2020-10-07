@@ -1,5 +1,5 @@
 
-# 🏆 Project Smood 🏆
+# 🏆 Project-Smood 🏆
 
 ##### **Badge:**
 ![License: ](https://img.shields.io/badge/License-MIT-green)
@@ -19,9 +19,7 @@ However, the user can also choose to search and play any track available dependi
 
 ## **Installation:**
 * Please use this link to deploy the app: https://projectsmood.herokuapp.com/
-* The link below are the project Github repository:
-- https://github.com/tpacba/project-smood
-- https://github.com/tpacba/project-smood-backend-
+
 
 ## **Technology:**
 * Universal Music search
@@ -47,7 +45,8 @@ However, the user can also choose to search and play any track available dependi
 * support@project-smood.com
 
 ### **Link:**
-* [GitHub] - https://github.com/project-smood
+* [GitHub] -https://github.com/tpacba/project-smood
+* [GitHub] -https://github.com/tpacba/project-smood-backend
 
 ### **Screenshots:**
 
