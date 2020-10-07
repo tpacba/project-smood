@@ -93,7 +93,7 @@ export default function () {
                 component="p"
                 style={{ textAlign: "center", fontSize: "12px" }}
               >
-                Login with your Spotify Premium account to connect with this
+                - Login with your Spotify Premium account to connect with this
                 app.
               </Typography>
             </Typography>
