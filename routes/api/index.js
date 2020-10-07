@@ -5,15 +5,12 @@ let querystring = require('querystring');
 
 const router = require("express").Router();
 
-let SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-let SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
+// let SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+// let SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 
 // let redirect_uri =
 //     process.env.REDIRECT_URI ||
 //     'http://localhost:8888/api/callback';
-
-router.route('/test')
-    .get(() => console.log("backend connection successful"))
 
 router.route('/login')
     .get(function (req, res) {
@@ -22,7 +19,7 @@ router.route('/login')
         res.redirect('https://accounts.spotify.com/authorize?' +
             querystring.stringify({
                 response_type: 'code',
-                client_id: SPOTIFY_CLIENT_ID,
+                client_id: process.env.SPOTIFY_CLIENT_ID,
                 scope: 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-private user-read-private',
                 redirect_uri: "https://projectsmood.herokuapp.com/api/callback"
             }))
@@ -41,7 +38,7 @@ router.route('/callback')
             },
             headers: {
                 'Authorization': 'Basic ' + (new Buffer(
-                    SPOTIFY_CLIENT_ID + ':' + SPOTIFY_CLIENT_SECRET
+                    process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET
                 ).toString('base64'))
             },
             json: true
