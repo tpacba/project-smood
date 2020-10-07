@@ -46,7 +46,7 @@ export default function () {
           size="large"
           color="default"
           onClick={() => {
-            window.location.href = "https://projectsmood-backend.herokuapp.com/api/login"}}
+            window.location.href = process.env.REACT_APP_LOGIN || "http://localhost:8888/api/"}}
         >
           <Icon icon={spotifyIcon} /> Login
         </Button>
